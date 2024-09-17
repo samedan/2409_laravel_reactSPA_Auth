@@ -15,3 +15,16 @@
 > composer require laravel/sanctum
 > php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
 > php artisan migrate
+
+### Model & files
+
+> php artisan make:model Post -a --api
+
+### API Routes
+
+> One line: api.php -> Route::apiResource('posts', PostController::class);
+> php artisan route:list
+
+### Accept header necessary
+
+> ![App](ttps://github.com/samedan/2409_laravel_reactSPA_Aut/blob/main/public/images/printscreen1.jpg)
