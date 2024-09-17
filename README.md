@@ -28,3 +28,7 @@
 ### Accept header necessary
 
 > ![App](https://github.com/samedan/2409_laravel_reactSPA_Auth/blob/main/public/images/printscreen1.jpg)
+
+### Auth
+
+> php artisan make:controller AuthController
