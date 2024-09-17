@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
+    // REGISTER
     public function register(Request $request) {
         $fields = $request->validate(([
             'name' => 'required|max:255',
@@ -23,6 +24,8 @@ class AuthController extends Controller
             'token' => $token->plainTextToken
         ];
     }
+
+    // LOGIN
     public function login(Request $request) {
         $request->validate(([            
             'email' => 'required|email|exists:users',
@@ -44,7 +47,12 @@ class AuthController extends Controller
         ];
 
     }
+
+    // LOGOUT
     public function logout(Request $request) {
-        return 'logout';
+        $request->user()->tokens()->delete(); //delete ALL tokens from 'personal_access_tokens' table
+        return [
+            'message' => 'You are logged out'
+        ];
     }
 }
