@@ -46,3 +46,7 @@
 ## Token expiration
 
 > /app/config/sanctum.php ->
+
+### ////////////////////////////////////
+
+### Installed react (vite), TailwindCSS, react-router-dom
