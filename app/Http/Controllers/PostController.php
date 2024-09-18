@@ -8,6 +8,7 @@ use App\Http\Requests\UpdatePostRequest;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controllers\HasMiddleware;
 use Illuminate\Routing\Controllers\Middleware;
+use Illuminate\Support\Facades\Gate;
 
 class PostController extends Controller 
 {
@@ -70,6 +71,8 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
+        Gate::authorize('modify', $post); // 'modify' function declared in PostPolicy.php
+
         $fields = $request->validate([
             'title' => 'required|max:255',
             'body' => 'required',
@@ -83,6 +86,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
+        Gate::authorize('modify', $post); // 'modify' function declared in PostPolicy.php
         $post->delete();
         return ['message' => "Post deleted"];
     }

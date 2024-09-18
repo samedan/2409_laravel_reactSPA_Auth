@@ -38,3 +38,11 @@
 > User model -> posts() {return $this->hasMany(Post::class);}
 > Post model -> user() {return $this->belongsTo(User::class);}
 > change PostController -> store()
+
+### Access or Not other user's Post
+
+> PostPolicy.php -> function modify()
+
+## Token expiration
+
+> /app/config/sanctum.php ->
