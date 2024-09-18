@@ -27,8 +27,11 @@ use Illuminate\Support\Facades\Route;
 
 // Crud ROUTES
 Route::apiResource('posts', PostController::class);
+// Route::apiResource('posts', PostController::class)->middleware('auth:sanctum', except);
+
+// Route::post('/posts',  [PostController::class, 'store'])->middleware('auth:sanctum');
 
 // Auth Routes
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
-Route::post('/logout', [AuthController::class, 'logout'])->middleware(('auth:sanctum'));
+Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');

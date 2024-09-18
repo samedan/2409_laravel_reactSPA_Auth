@@ -32,3 +32,9 @@
 ### Auth
 
 > php artisan make:controller AuthController
+
+### Add posts to Users and users to Posts
+
+> User model -> posts() {return $this->hasMany(Post::class);}
+> Post model -> user() {return $this->belongsTo(User::class);}
+> change PostController -> store()
