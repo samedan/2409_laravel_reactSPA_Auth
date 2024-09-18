@@ -58,3 +58,11 @@
 ## Vite backend URI
 
 > react_folder/vite.config.js -> server: {}
+
+### Token Auth
+
+## Register
+
+> Get Token, set it in localStorage
+> Load User data from DBB using the Token
+> Save Token, User in context

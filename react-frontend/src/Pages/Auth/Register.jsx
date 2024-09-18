@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { AppContext } from "../../Context/AppContext";
 
 export default function Register() {
     const [formData, setFormData] = useState({
@@ -8,6 +10,10 @@ export default function Register() {
         password_confirmation: "",
     });
     const [errors, setErrors] = useState({});
+
+    const { setToken } = useContext(AppContext);
+
+    const navigate = useNavigate();
 
     async function handleRegister(e) {
         e.preventDefault();
@@ -21,6 +27,9 @@ export default function Register() {
         if (data.errors) {
             setErrors(data.errors);
         } else {
+            localStorage.setItem("token", data.token);
+            setToken(data.token);
+            navigate("/");
             console.log(data);
         }
 
@@ -30,6 +39,7 @@ export default function Register() {
     return (
         <>
             <h1 className="title">Register an account</h1>
+
             <form onSubmit={handleRegister} className="w-1/2 mx-auto space-y-6">
                 <div>
                     <input
