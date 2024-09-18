@@ -2,6 +2,10 @@
 
 > https://www.youtube.com/watch?v=LmMJB3STuU4&list=PL38wFHH4qYZUXLba1gx1l5r_qqMoVZmKM
 
+# Source React Git :
+
+> https://github.com/JonVadar/YouTube_videos/tree/main/Laravel%20Sanctum%20API%20series/laravel-api-react-app
+
 # This Git
 
 > https://github.com/samedan/2409_laravel_reactSPA_Auth
@@ -50,3 +54,7 @@
 ### ////////////////////////////////////
 
 ### Installed react (vite), TailwindCSS, react-router-dom
+
+## Vite backend URI
+
+> react_folder/vite.config.js -> server: {}
