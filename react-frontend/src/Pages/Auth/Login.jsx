@@ -28,7 +28,7 @@ export default function Login() {
         } else {
             localStorage.setItem("token", data.token);
             setToken(data.token);
-            // navigate("/");
+            navigate("/");
         }
 
         // console.log(data);
