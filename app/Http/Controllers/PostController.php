@@ -37,7 +37,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return Post::all();
+        return Post::with("user")->latest()->get(); // get post with the user who created it
     }
 
     /** POST /api/posts/

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Create() {
     const { token } = useContext(AppContext);
-    const { navigate } = useNavigate();
+    const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
         title: "",

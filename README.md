@@ -66,3 +66,8 @@
 > Get Token, set it in localStorage
 > Load User data from DBB using the Token
 > Save Token, User in context
+
+### Home -> get All posts
+
+> > Get post with the user who created it
+> > PostController() -> return Post::with("user")->get();
