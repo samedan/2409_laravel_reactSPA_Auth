@@ -50,6 +50,23 @@ export default function Home() {
             ) : (
                 <p>There are no posts</p>
             )}
+            <hr></hr>
+            <div className="my-4">
+                <Link
+                    to={`/login`}
+                    className="bg-blue-500 text-white text-sm rounded-lg_ px-3 py-1"
+                >
+                    Login
+                </Link>{" "}
+                or{" "}
+                <Link
+                    to={`/register`}
+                    className="bg-yellow-500 text-white text-sm rounded-lg_ px-3 py-1"
+                >
+                    Register
+                </Link>{" "}
+                to add your posts
+            </div>
         </>
     );
 }
