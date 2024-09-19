@@ -5,6 +5,8 @@ import { AppContext } from "../Context/AppContext";
 export default function Layout() {
     const { user } = useContext(AppContext);
 
+    console.log(user);
+
     return (
         <>
             <header>

@@ -4,7 +4,7 @@ export const AppContext = createContext();
 
 export default function AppProvider({ children }) {
     const [token, setToken] = useState(localStorage.getItem("token"));
-    const [user, setUser] = useState();
+    const [user, setUser] = useState(null);
 
     // Verify on BACKEND if user is loggend in with good Token
     async function getUser() {
@@ -14,8 +14,10 @@ export default function AppProvider({ children }) {
             },
         });
         const data = await res.json();
-        // console.log(data);
-        setUser(data);
+        console.log(data);
+        if (res.ok) {
+            setUser(data);
+        }
     }
 
     useEffect(() => {
