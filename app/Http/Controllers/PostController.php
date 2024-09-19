@@ -54,7 +54,10 @@ class PostController extends Controller
         // $post = Post::create($fields);
 
         $post = $request->user()->posts()->create($fields);
-        return $post;
+        return [
+            'post' => $post,
+            'user' => $post->user
+        ];
         
     }
 
@@ -63,7 +66,11 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        return $post;
+        // return $post;
+        return [
+            'post' => $post,
+            'user' => $post->user
+        ];
     }
 
     /** PUT /api/posts/{post}
@@ -78,7 +85,11 @@ class PostController extends Controller
             'body' => 'required',
         ]);
         $post->update($fields);
-        return $post;
+        // return $post;
+        return [
+            'post' => $post,
+            'user' => $post->user
+        ];
     }
 
     /** DELETE /api/posts/{post}
